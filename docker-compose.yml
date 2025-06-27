@@ -1,0 +1,11 @@
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./:/app
+      - /app/node_modules # importante: não sobrescrever node_modules do container
+    command: npm start
