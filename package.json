@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
-    "build:prod": "ng build --configuration=production --base-href=/",
+    "build:prod": "ng build --configuration=production --base-href=/RIU-Frontend-Juan-Versolato-Lopes/",
     "lint:prettier:check": "prettier --check .",
     "lint:prettier:fix": "prettier --write .",
     "lint:eslint:check": "eslint .",
