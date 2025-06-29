@@ -43,7 +43,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   private $stateManagement: StateManagementService = inject(StateManagementService);
 
   public headerForm = this.fb.group({
-    language: this.fb.control<string>('pt'),
+    language: this.fb.control<string>('es'),
   });
   private destroy$ = new Subject<void>();
   public isCollapsed = false;
