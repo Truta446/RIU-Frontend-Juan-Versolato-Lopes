@@ -48,7 +48,7 @@ export class DashboardComponent implements OnInit {
     this.prepareSuperpowerChart();
   }
 
-  private prepareSuperpowerChart(): void {
+  public prepareSuperpowerChart(): void {
     const allPowers = this.heroes.flatMap((hero) => hero.superPower);
     const powerCounts: Record<string, number> = {};
 

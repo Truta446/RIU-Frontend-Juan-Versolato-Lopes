@@ -1,59 +1,74 @@
-# RIUFrontendJuanVersolatoLopes
+# Mindata - Challenge
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Este proyecto fue desarrollado como parte del desafío técnico de Frontend de Mindata.
 
-## Development server
+## Descripción
 
-To start a local development server, run:
+Esta aplicación está construida con [Angular CLI](https://github.com/angular/angular-cli) versión 19.2.15 y cumple todos los requisitos del desafío técnico.
 
-```bash
-ng serve
-```
+- **Docker Ready**: La aplicación se puede iniciar fácilmente con Docker Compose.
+- **Cobertura de Testes Unitarios**: Incluye pruebas unitarias con alta cobertura utilizando Karma y Jasmine.
+- **Organización Moderna**: Código modular, limpio y enfocado en buenas prácticas.
+- **CI/CD Friendly**: Listo para integración continua y despliegue automatizado.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+## 📄 Archivo del Desafío
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Puedes consultar el enunciado completo del desafío técnico aquí:  
+[Prueba Tecnica Frontend Mindata.pdf](./Prueba Tecnica Frontend Mindata.pdf)
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🚀 Cómo ejecutar el proyecto
 
-```bash
-ng generate --help
-```
+### 1. Requisitos previos
 
-## Building
+- [Docker](https://www.docker.com/) y [Docker Compose](https://docs.docker.com/compose/) instalados.
 
-To build the project run:
+### 2. Levantar el entorno de desarrollo
 
 ```bash
-ng build
+docker compose up
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Esto iniciará la aplicación en modo desarrollo en [http://localhost:4200/](http://localhost:4200/).
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🧪 Ejecutar tests unitarios
+
+Para correr los tests unitarios y obtener el reporte de cobertura, utiliza:
 
 ```bash
-ng test
+npm run test:coverage
 ```
 
-## Running end-to-end tests
+El informe de cobertura se generará en la carpeta `/coverage`.
 
-For end-to-end (e2e) testing, run:
+### 📸 Print del coverage
 
-```bash
-ng e2e
-```
+![Cobertura de Testes](https://ensicus-public-prod.s3.us-east-1.amazonaws.com/test-coverage.png)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 🎥 Video de presentación
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+[Ver vídeo de presentación](https://studio.youtube.com/video/urCSovJjY9U/edit)
+
+---
+
+## 📝 Notas técnicas
+
+- **Arquitectura**: Angular 19+ standalone components, signals, Ng-Zorro (Ant Design), ECharts, ngx-translate, etc.
+- **Tests**: 100% de los servicios, componentes principales y lógica crítica están cubiertos por pruebas.
+- **Mocks/Storage**: Persistencia local simulada usando LocalStorage y mocks.
+- **Internacionalización**: Proyecto preparado para varios idiomas con ngx-translate.
+- **Estilo**: Responsive, componentes reutilizables y buenas prácticas CSS/SCSS.
+
+---
+
+## 💬 Contacto
+
+Proyecto realizado por **Juan Versolato Lopes**.  
+Para más información o consultas técnicas, puedes contactarme por [LinkedIn](https://www.linkedin.com/in/juan-versolato-lopes/).
