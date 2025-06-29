@@ -1,0 +1,39 @@
+@use '../../../../theme/variables' as *;
+
+:host {
+  display: flex;
+
+  .ant-layout-sider:not(.ant-layout-sider-collapsed) .ant-menu-item-selected {
+    background: rgba(230, 26, 52, 0.1) !important;
+    color: $text-primary !important;
+  }
+}
+
+nz-sider,
+ul {
+  font-size: 16px;
+  color: #374151;
+  background-color: #fff;
+  border-top: 1px solid #e5e7eb;
+}
+
+.sidebar-logo {
+  position: relative;
+  height: 62px;
+  text-align: center;
+  overflow: hidden;
+  line-height: 62px;
+  transition: all 0.3s;
+
+  img {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+}
+
+.menu-sidebar {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+}

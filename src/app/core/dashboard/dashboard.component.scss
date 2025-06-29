@@ -1,0 +1,66 @@
+@use '../../../theme/variables' as *;
+
+.dashboard {
+  .subtitle {
+    font-size: 14px;
+    color: $text-light-gray;
+  }
+
+  .title {
+    font-size: 24px;
+    margin-bottom: 0 !important;
+  }
+
+  .m-b-2 {
+    margin-bottom: 32px;
+  }
+
+  .echart {
+    height: 400px;
+    width: 100%;
+  }
+
+  .card-results {
+    .col-wrapper {
+      align-self: center;
+    }
+
+    .icon-wrapper {
+      border-radius: 50%;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      // Azul
+      &.icon-blue {
+        background-color: #dbeafe;
+        nz-icon {
+          color: #2563eb;
+          font-size: 24px;
+        }
+      }
+      // Amarelo
+      &.icon-yellow {
+        background-color: #fef9c3;
+        nz-icon {
+          color: #ca8a04;
+          font-size: 24px;
+        }
+      }
+      // Verde
+      &.icon-green {
+        background-color: #d1fae5;
+        nz-icon {
+          color: #059669;
+          font-size: 24px;
+        }
+      }
+    }
+
+    span {
+      font-size: 24px;
+    }
+  }
+}

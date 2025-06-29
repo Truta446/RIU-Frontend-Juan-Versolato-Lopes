@@ -1,0 +1,19 @@
+<nz-header class="header-container">
+  <div class="logo-container">
+    <nz-icon
+      (click)="toggleSidebar()"
+      class="pointer-cursor"
+      [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+    ></nz-icon>
+  </div>
+
+  <form [formGroup]="headerForm" class="controls" (ngSubmit)="$event.preventDefault()">
+    <nz-input-group nzPrefixIcon="global" class="lang-input">
+      <nz-select id="lang" formControlName="language" class="lang-select m-r-1" nzBorderless>
+        <nz-option nzValue="pt" nzLabel="PT"></nz-option>
+        <nz-option nzValue="en" nzLabel="EN"></nz-option>
+        <nz-option nzValue="es" nzLabel="ES"></nz-option>
+      </nz-select>
+    </nz-input-group>
+  </form>
+</nz-header>
