@@ -1,0 +1,58 @@
+<section class="detail">
+  <nz-row class="m-b-1-2">
+    <nz-col [nzSpan]="24" class="d-flex">
+      <span nz-icon nzType="arrow-left" class="pointer-cursor" routerLink="/heroes"></span>
+      <h2 class="title">{{ 'detail.title' | translate }}</h2>
+    </nz-col>
+  </nz-row>
+  <nz-row>
+    <nz-col [nzSpan]="24">
+      <nz-card>
+        <nz-row class="m-b-1-2">
+          <nz-col [nzSpan]="24" class="d-flex">
+            <div class="w-100">
+              <h3 class="hero-name">{{ hero?.name }}</h3>
+            </div>
+            <div class="flex-end w-100">
+              <app-button type="primary" icon="edit" [routerLink]="'/heroes/' + hero?.id">
+                {{ 'home.edit' | translate }}
+              </app-button>
+              <app-button
+                type="default"
+                class="m-l-1"
+                icon="delete"
+                nz-popconfirm
+                nzOkText="{{ 'home.delete' | translate }}"
+                nzCancelText="{{ 'form.cancel' | translate }}"
+                nzPopconfirmTitle="{{ 'home.confirmDialog' | translate }}"
+                nzPopconfirmPlacement="bottom"
+                (nzOnConfirm)="deleteHero(hero?.id)"
+              >
+                {{ 'home.delete' | translate }}
+              </app-button>
+            </div>
+          </nz-col>
+        </nz-row>
+
+        <nz-row>
+          <nz-col [nzSpan]="24">
+            <nz-descriptions nzBordered [nzColumn]="1">
+              <nz-descriptions-item nzTitle="{{ 'home.headers.name' | translate }}">
+                {{ hero?.name }}
+              </nz-descriptions-item>
+              <nz-descriptions-item nzTitle="{{ 'home.headers.superpowers' | translate }}">
+                {{ hero?.superPower }}
+              </nz-descriptions-item>
+              <nz-descriptions-item nzTitle="{{ 'form.description' | translate }}">
+                {{ hero?.description }}
+              </nz-descriptions-item>
+              <nz-descriptions-item nzTitle="{{ 'home.headers.createdAt' | translate }}">
+                {{ hero?.createdAt | date: 'longDate' }} ({{ hero?.createdAt | date: 'shortTime' }})
+              </nz-descriptions-item>
+            </nz-descriptions>
+          </nz-col>
+        </nz-row>
+      </nz-card>
+    </nz-col>
+  </nz-row>
+</section>

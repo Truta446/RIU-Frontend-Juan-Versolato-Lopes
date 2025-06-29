@@ -1,0 +1,60 @@
+<section class="dashboard">
+  <nz-row>
+    <nz-col [nzSpan]="24">
+      <h2 class="title">{{ 'sidenav.dashboard' | translate }}</h2>
+    </nz-col>
+  </nz-row>
+  <nz-row class="m-b-2">
+    <nz-col [nzSpan]="24">
+      <p class="subtitle">{{ 'dashboard.subtitle' | translate }}</p>
+    </nz-col>
+  </nz-row>
+  <nz-row [nzGutter]="24" class="m-b-2">
+    <nz-col [nzSpan]="8">
+      <nz-card class="card-results">
+        <nz-row [nzGutter]="8">
+          <nz-col [nzSpan]="4" class="col-wrapper">
+            <div class="icon-wrapper icon-blue"><nz-icon nzType="dingding" nzTheme="outline" /></div>
+          </nz-col>
+          <nz-col [nzSpan]="20">
+            <h5 class="subtitle">{{ 'dashboard.commonSuperpower' | translate }}</h5>
+            <span>{{ totalHeroes }}</span>
+          </nz-col>
+        </nz-row>
+      </nz-card>
+    </nz-col>
+    <nz-col [nzSpan]="8">
+      <nz-card class="card-results">
+        <nz-row [nzGutter]="8">
+          <nz-col [nzSpan]="4" class="col-wrapper">
+            <div class="icon-wrapper icon-yellow"><nz-icon nzType="star" nzTheme="outline" /></div>
+          </nz-col>
+          <nz-col [nzSpan]="20">
+            <h5 class="subtitle">{{ 'dashboard.commonSuperpower' | translate }}</h5>
+            <span>{{ mostCommonPower?.power }} ({{ mostCommonPower?.count }})</span>
+          </nz-col>
+        </nz-row>
+      </nz-card>
+    </nz-col>
+    <nz-col [nzSpan]="8">
+      <nz-card class="card-results">
+        <nz-row [nzGutter]="8">
+          <nz-col [nzSpan]="4" class="col-wrapper">
+            <div class="icon-wrapper icon-green"><nz-icon nzType="clock-circle" nzTheme="outline" /></div>
+          </nz-col>
+          <nz-col [nzSpan]="20">
+            <h5 class="subtitle">{{ 'dashboard.orderByCreatedAt' | translate }}</h5>
+            <span>{{ mostRecentHero.name }} - {{ mostRecentHero.createdAt | date: 'MMM d, y' }}</span>
+          </nz-col>
+        </nz-row>
+      </nz-card>
+    </nz-col>
+  </nz-row>
+  <nz-row>
+    <nz-col [nzSpan]="24">
+      <nz-card nzTitle="{{ 'dashboard.graphTitle' | translate }}">
+        <div echarts [options]="options" [loading]="isLoading" class="echart"></div>
+      </nz-card>
+    </nz-col>
+  </nz-row>
+</section>

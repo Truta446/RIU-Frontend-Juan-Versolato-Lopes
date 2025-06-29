@@ -1,3 +1,47 @@
 {
-  "logout": "Sair"
+  "sidenav": {
+    "dashboard": "Panel",
+    "heroes": "Héroes"
+  },
+  "dashboard": {
+    "subtitle": "Resumen de la gestión de superhéroes",
+    "total": "Total de héroes",
+    "commonSuperpower": "Superpoder más común",
+    "orderByCreatedAt": "Creado más recientemente",
+    "graphTitle": "Resumen del estado de los héroes"
+  },
+  "home": {
+    "addBtn": "Agregar héroe",
+    "searchPlaceholder": "Buscar por nombre del héroe...",
+    "headers": {
+      "name": "Nombre",
+      "superpowers": "Superpoderes",
+      "createdAt": "Fecha de creación",
+      "actions": "Acciones"
+    },
+    "seeDetails": "Ver detalles",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "confirmDialog": "¿Estás seguro de que deseas eliminar este héroe?"
+  },
+  "detail": {
+    "title": "Detalles del héroe",
+    "deleteMessage": "Héroe eliminado exitosamente."
+  },
+  "form": {
+    "required": "Campo obligatorio",
+    "name": "Nombre",
+    "superPower": "Superpoder",
+    "editTitle": "Editar héroe",
+    "createTitle": "Crear héroe",
+    "namePlaceholder": "Ingresa el nombre del héroe",
+    "superpowerPlaceholder": "Elige hasta 3 superpoderes",
+    "description": "Descripción",
+    "descriptionError": "La descripción debe tener como máximo 512 caracteres.",
+    "descriptionPlaceholder": "Ingresa la descripción del héroe",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "editSuccessMessage": "¡Héroe actualizado exitosamente!",
+    "createSuccessMessage": "¡Héroe creado exitosamente!"
+  }
 }

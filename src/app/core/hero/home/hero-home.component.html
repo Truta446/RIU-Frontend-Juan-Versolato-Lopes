@@ -1,0 +1,87 @@
+<section class="home">
+  <nz-row class="m-b-1-2">
+    <nz-col [nzSpan]="12">
+      <h2 class="title">{{ 'sidenav.heroes' | translate }}</h2>
+    </nz-col>
+    <nz-col [nzSpan]="12" class="flex-end">
+      <app-button type="primary" icon="plus" routerLink="/heroes/0">{{ 'home.addBtn' | translate }}</app-button>
+    </nz-col>
+  </nz-row>
+
+  <nz-row class="m-b-0-1">
+    <nz-col [nzSpan]="24">
+      <form nz-form [formGroup]="form" nzLayout="vertical">
+        <nz-form-item>
+          <nz-form-control>
+            <nz-input-group nzPrefixIcon="search">
+              <input
+                type="text"
+                nz-input
+                formControlName="search"
+                placeholder="{{ 'home.searchPlaceholder' | translate }}"
+              />
+            </nz-input-group>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </nz-col>
+  </nz-row>
+
+  <nz-row class="m-b-2">
+    <nz-col [nzSpan]="24">
+      <nz-table #basicTable [nzData]="heroes" [nzShowPagination]="true">
+        <thead>
+          <tr>
+            <th class="header">{{ 'home.headers.name' | translate }}</th>
+            <th class="header">{{ 'home.headers.superpowers' | translate }}</th>
+            <th class="header">{{ 'home.headers.createdAt' | translate }}</th>
+            <th class="header">{{ 'home.headers.actions' | translate }}</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (data of basicTable.data; track data) {
+            <tr>
+              <td class="name">{{ data.name }}</td>
+              <td class="details">{{ data.superPower }}</td>
+              <td class="details">{{ data.createdAt | date: 'dd/MM/yyyy' }}</td>
+              <td>
+                <nz-icon
+                  nzType="more"
+                  nzTheme="outline"
+                  class="pointer-cursor"
+                  nz-dropdown
+                  [nzDropdownMenu]="menu"
+                  nzPlacement="bottomRight"
+                  nzTrigger="click"
+                />
+                <nz-dropdown-menu #menu="nzDropdownMenu">
+                  <ul nz-menu>
+                    <li nz-menu-item [routerLink]="'/heroes/' + data.id + '/detail'">
+                      {{ 'home.seeDetails' | translate }}
+                    </li>
+                  </ul>
+                  <ul nz-menu>
+                    <li nz-menu-item [routerLink]="'/heroes/' + data.id">{{ 'home.edit' | translate }}</li>
+                  </ul>
+                  <ul nz-menu>
+                    <li
+                      nz-menu-item
+                      nz-popconfirm
+                      nzOkText="{{ 'home.delete' | translate }}"
+                      nzCancelText="{{ 'form.cancel' | translate }}"
+                      nzPopconfirmTitle="{{ 'home.confirmDialog' | translate }}"
+                      nzPopconfirmPlacement="bottom"
+                      (nzOnConfirm)="deleteHero(data.id)"
+                    >
+                      {{ 'home.delete' | translate }}
+                    </li>
+                  </ul>
+                </nz-dropdown-menu>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </nz-table>
+    </nz-col>
+  </nz-row>
+</section>

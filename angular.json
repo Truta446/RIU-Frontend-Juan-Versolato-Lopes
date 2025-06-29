@@ -14,10 +14,10 @@
       "sourceRoot": "src",
       "prefix": "app",
       "i18n": {
-        "sourceLocale": "en",
+        "sourceLocale": "es",
         "locales": {
           "pt": "src/assets/i18n/pt.json",
-          "es": "src/assets/i18n/es.json"
+          "en": "src/assets/i18n/en.json"
         }
       },
       "architect": {

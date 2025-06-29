@@ -1,1 +1,4 @@
-export const environment = {};
+export const environment = {
+  PRODUCTION: false,
+  CRYPTO_PRIVATE_KEY: '1ea4341dc340482f6622e56e67d223880686b2508ef8eb1401c1f65921f91d32',
+};

@@ -1,17 +1,17 @@
-# Pull Request Template App. (Coloque o nome da tarefa aqui)
+# Plantilla de Pull Request de la App (Coloca el nombre de la tarea aquí)
 
-(Adicione uma breve descrição)
+(Agrega una breve descripción)
 
 ## Historia
 
-[ID](link da historia)
+[ID](enlace a la historia)
 
-## Checklist desenvolvimento
+## Checklist de desarrollo
 
-- [ ] Meu código evita a repetição de css, utilizando as classes do styles.scss ?
-- [ ] Meu código esta usando as classes de texto do figma ? ex: T4, SH4, H6 ?
-- [ ] Meu código utiliza rem no lugar de px ?
-- [ ] Meu código foi construido utilizando a estrutura de grid ? ex: nz-row e nz-col ?
-- [ ] Meu código esta utilizando os componentes shared ao invés de tags html ?
-- [ ] Meu layout confere com o do figma ?
-- [ ] Meu código tem log sem usabilidade ?
+- [ ] ¿Mi código evita la repetición de CSS utilizando las clases de styles.scss?
+- [ ] ¿Mi código está usando las clases de texto del Figma? Ej: T4, SH4, H6.
+- [ ] ¿Mi código utiliza rem en lugar de px?
+- [ ] ¿Mi código fue construido utilizando la estructura de grid? Ej: nz-row y nz-col.
+- [ ] ¿Mi código está utilizando los componentes shared en lugar de etiquetas HTML?
+- [ ] ¿Mi layout coincide con el de Figma?
+- [ ] ¿Mi código tiene logs sin utilidad?

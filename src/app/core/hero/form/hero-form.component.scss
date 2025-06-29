@@ -1,0 +1,51 @@
+.form {
+  width: 100%;
+
+  .title {
+    font-size: 24px;
+    margin-left: 16px;
+    margin-bottom: 0 !important;
+  }
+
+  .m-b-1-2 {
+    margin-bottom: 24px;
+  }
+
+  .m-b-1 {
+    margin-bottom: 16px;
+  }
+
+  .content-center {
+    place-content: center;
+  }
+
+  .d-flex {
+    display: flex;
+  }
+
+  .m-l-1 {
+    margin-left: 16px;
+  }
+
+  .end-flex {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .pointer-cursor {
+    cursor: pointer;
+  }
+
+  nz-card {
+    width: 600px;
+  }
+
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 8px;
+    height: 42px;
+  }
+}

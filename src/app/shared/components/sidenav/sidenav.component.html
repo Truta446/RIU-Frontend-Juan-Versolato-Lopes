@@ -1,0 +1,25 @@
+<nz-sider
+  class="menu-sidebar"
+  nzCollapsible
+  nzWidth="256px"
+  nzBreakpoint="md"
+  [(nzCollapsed)]="isCollapsed"
+  [nzTrigger]="null"
+>
+  <div class="sidebar-logo">
+    <a routerLink="/dashboard">
+      <img height="32" [src]="isCollapsed ? 'assets/images/favicon.ico' : 'assets/images/logotipo.png'" alt="logo" />
+    </a>
+  </div>
+
+  <ul nz-menu nzTheme="light" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
+    <li nz-menu-item nzMatchRouter routerLink="/dashboard">
+      <nz-icon nzType="dashboard" nzTheme="outline" />
+      <span>{{ 'sidenav.dashboard' | translate }}</span>
+    </li>
+    <li nz-menu-item nzMatchRouter routerLink="/heroes">
+      <nz-icon nzType="dingding" nzTheme="outline" />
+      <span>{{ 'sidenav.heroes' | translate }}</span>
+    </li>
+  </ul>
+</nz-sider>

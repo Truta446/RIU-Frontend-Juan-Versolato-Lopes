@@ -1,3 +1,47 @@
 {
-  "logout": "Sair"
+  "sidenav": {
+    "dashboard": "Dashboard",
+    "heroes": "Heroes"
+  },
+  "dashboard": {
+    "subtitle": "Overview of superhero management",
+    "total": "Total heroes",
+    "commonSuperpower": "Most common superpower",
+    "orderByCreatedAt": "Most recently created",
+    "graphTitle": "Overview of heroes' status"
+  },
+  "home": {
+    "addBtn": "Add hero",
+    "searchPlaceholder": "Search by hero's name...",
+    "headers": {
+      "name": "Name",
+      "superpowers": "Superpowers",
+      "createdAt": "Creation date",
+      "actions": "Actions"
+    },
+    "seeDetails": "View details",
+    "edit": "Edit",
+    "delete": "Delete",
+    "confirmDialog": "Are you sure you want to delete this hero?"
+  },
+  "detail": {
+    "title": "Hero details",
+    "deleteMessage": "Hero successfully deleted."
+  },
+  "form": {
+    "required": "Required field",
+    "name": "Name",
+    "superPower": "Superpower",
+    "editTitle": "Edit hero",
+    "createTitle": "Create hero",
+    "namePlaceholder": "Enter the hero's name",
+    "superpowerPlaceholder": "Choose up to 3 superpowers",
+    "description": "Description",
+    "descriptionError": "Description must be at most 512 characters.",
+    "descriptionPlaceholder": "Enter the hero's description",
+    "cancel": "Cancel",
+    "save": "Save",
+    "editSuccessMessage": "Hero successfully updated!",
+    "createSuccessMessage": "Hero successfully created!"
+  }
 }

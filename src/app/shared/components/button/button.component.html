@@ -1,0 +1,6 @@
+<button nz-button [nzType]="type" [disabled]="disabled" [nzLoading]="loading" [nzBlock]="block">
+  <ng-content></ng-content>
+  @if (icon) {
+    <nz-icon [nzType]="icon" />
+  }
+</button>
