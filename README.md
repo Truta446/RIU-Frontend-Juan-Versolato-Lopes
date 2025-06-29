@@ -52,12 +52,6 @@ El informe de cobertura se generará en la carpeta `/coverage`.
 
 ---
 
-## 🎥 Video de presentación
-
-[Ver vídeo de presentación](https://studio.youtube.com/video/urCSovJjY9U/edit)
-
----
-
 ## 📝 Notas técnicas
 
 - **Arquitectura**: Angular 19+ standalone components, signals, Ng-Zorro (Ant Design), ECharts, ngx-translate, etc.
