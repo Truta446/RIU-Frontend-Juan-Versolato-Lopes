@@ -65,7 +65,7 @@ export class HeroFormComponent implements OnInit {
     const heroId = this.route.snapshot.paramMap.get('id')!;
     this.hero = this.$hero.getById(heroId);
 
-    if (!!this.hero?.id) {
+    if (this.hero?.id) {
       this.form.patchValue({
         name: this.hero.name,
         description: String(this.hero.description),
@@ -78,7 +78,7 @@ export class HeroFormComponent implements OnInit {
     if (this.form.valid) {
       const { name, description, superPower } = this.form.value;
 
-      if (!!this.hero?.id) {
+      if (this.hero?.id) {
         this.$hero.update({ id: this.hero.id, name: name!, description, superPower: superPower! });
         this.$message.success(this.$translate.instant('form.editSuccessMessage'));
       } else {
