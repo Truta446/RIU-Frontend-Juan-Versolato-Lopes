@@ -110,7 +110,7 @@ describe('HeroHomeComponent', () => {
     fixture.detectChanges();
     const input = component.form.get('search');
     input?.setValue('bat');
-    tick(300); // Aguarda debounce
+    tick(300);
     fixture.detectChanges();
 
     expect(component.heroes.length).toBe(1);
@@ -126,7 +126,7 @@ describe('HeroHomeComponent', () => {
 
   it('should update heroes after delete', () => {
     fixture.detectChanges();
-    // Simula o herói sumindo após o delete
+
     heroService.getAll.and.returnValue(HEROES.filter((h) => h.id !== '1'));
     component.deleteHero('1');
     expect(component.heroes.find((h) => h.id === '1')).toBeUndefined();
@@ -150,7 +150,7 @@ describe('HeroHomeComponent', () => {
     const spy = spyOn<any>(component, 'filterHeroes').and.callThrough();
     const input = component.form.get('search');
     input?.setValue('Wonder');
-    tick(300); // Espera o debounce
+    tick(300);
     fixture.detectChanges();
     expect(spy).toHaveBeenCalled();
   }));

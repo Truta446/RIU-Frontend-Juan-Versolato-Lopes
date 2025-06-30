@@ -15,10 +15,9 @@ describe('SidenavComponent', () => {
   let fixture: ComponentFixture<SidenavComponent>;
   let stateManagementService: jasmine.SpyObj<StateManagementService>;
 
-  // Testes que não precisam alterar o provider dinâmicamente
   beforeEach(waitForAsync(() => {
     const stateManagementSpy = jasmine.createSpyObj('StateManagementService', ['isCollapsed']);
-    stateManagementSpy.isCollapsed.and.returnValue(false); // Default: não colapsado
+    stateManagementSpy.isCollapsed.and.returnValue(false);
 
     TestBed.configureTestingModule({
       imports: [

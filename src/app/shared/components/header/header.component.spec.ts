@@ -19,7 +19,6 @@ describe('HeaderComponent', () => {
   let stateManagementService: any;
 
   beforeEach(waitForAsync(() => {
-    // Ajuste de signals com .set usando Object.assign e 'as any' para não dar erro TS
     const languageSignal = Object.assign(
       jasmine.createSpy('language', () => 'es'),
       { set: jasmine.createSpy('set') }

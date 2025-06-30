@@ -96,7 +96,7 @@ describe('DashboardComponent', () => {
   it('should set options and disable loading after chart prep', (done) => {
     component.heroes = HEROES;
     component.prepareSuperpowerChart();
-    // loading desabilita após 1s
+
     setTimeout(() => {
       expect(component.isLoading).toBeFalse();
       done();
@@ -110,13 +110,13 @@ describe('DashboardComponent', () => {
 
   it('should calculate mostCommonPower getter correctly', () => {
     component.heroes = HEROES;
-    // "Super strength" aparece em 2 heróis
+
     expect(component.mostCommonPower).toEqual({ power: 'Super strength', count: 2 });
   });
 
   it('should calculate mostRecentHero getter correctly', () => {
     component.heroes = HEROES;
-    // Wonder Woman é mais recente
+
     expect(component.mostRecentHero.name).toBe('Wonder Woman');
   });
 
@@ -128,7 +128,6 @@ describe('DashboardComponent', () => {
     const cards = fixture.debugElement.queryAll(By.css('.card-results'));
     expect(cards.length).toBe(3);
 
-    // Testa gráfico (apenas a div, não a renderização real)
     const chartDiv = fixture.debugElement.query(By.css('.echart'));
     expect(chartDiv).toBeTruthy();
   });

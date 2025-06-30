@@ -65,7 +65,6 @@ describe('HeroDetailComponent', () => {
     fixture = TestBed.createComponent(HeroDetailComponent);
     component = fixture.componentInstance;
 
-    // Troca manual porque o inject do Angular pode usar o símbolo 'Router', mas RouterTestingModule cobre normalmente.
     (component as any).router = router;
     fixture.detectChanges();
   }));

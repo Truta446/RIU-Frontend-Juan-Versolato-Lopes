@@ -13,13 +13,6 @@ Esta aplicación está construida con [Angular CLI](https://github.com/angular/a
 
 ---
 
-## 📄 Archivo del Desafío
-
-Puedes consultar el enunciado completo del desafío técnico aquí:  
-[Prueba Tecnica Frontend Mindata.pdf](./Prueba Tecnica Frontend Mindata.pdf)
-
----
-
 ## 🚀 Cómo ejecutar el proyecto
 
 ### 1. Requisitos previos

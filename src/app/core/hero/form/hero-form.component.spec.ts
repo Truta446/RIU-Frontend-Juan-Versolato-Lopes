@@ -46,7 +46,6 @@ describe('HeroFormComponent', () => {
     translateService = jasmine.createSpyObj('TranslateService', ['instant', 'get', 'stream']);
     router = jasmine.createSpyObj('Router', ['navigate']);
 
-    // instant() retorna mensagem só para as chaves certas, senão retorna a própria chave
     translateService.instant.and.callFake((key: string) => {
       if (key === 'form.editSuccessMessage') return 'Herói atualizado!';
       if (key === 'form.createSuccessMessage') return 'Herói criado!';
@@ -131,7 +130,7 @@ describe('HeroFormComponent', () => {
   });
 
   it('should call add on submit when creating', () => {
-    component.hero = undefined; // Simula novo herói
+    component.hero = undefined;
     component.form.setValue({
       name: 'Flash',
       description: 'Fastest Man Alive',
@@ -170,7 +169,6 @@ describe('HeroFormComponent', () => {
   });
 
   it('should render the correct title for create mode', () => {
-    // Força create mode
     heroService.getById.and.returnValue(undefined as any);
     (activatedRoute.snapshot.paramMap.get as any) = (k: string) => (k === 'id' ? null : null);
     fixture = TestBed.createComponent(HeroFormComponent);
