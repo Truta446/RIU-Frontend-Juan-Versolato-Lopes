@@ -45,5 +45,5 @@ module.exports = tseslint.config(
       '@angular-eslint/template/label-has-associated-control': 'off',
     },
   },
-  { ignores: ['node_modules/*', '.angular/*'] }
+  { ignores: ['node_modules/*', '.angular/*', 'coverage/*'] }
 );

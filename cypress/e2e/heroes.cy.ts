@@ -24,7 +24,7 @@ describe('Heroes CRUD', () => {
     cy.get('app-button[type="primary"]').contains('Save').click();
 
     cy.url().should('include', '/heroes');
-    cy.contains('Test Hero').should('exist');
+    cy.contains('TEST HERO').should('exist');
   });
 
   it('should edit a hero', () => {
@@ -40,7 +40,7 @@ describe('Heroes CRUD', () => {
     cy.get('app-button[type="primary"]').contains('Save').click();
 
     cy.url().should('include', '/heroes');
-    cy.contains('Updated Hero').should('exist');
+    cy.contains('UPDATED HERO').should('exist');
   });
 
   it('should delete a hero', () => {
@@ -52,6 +52,6 @@ describe('Heroes CRUD', () => {
 
     cy.get('.ant-popover-buttons').find('button.ant-btn-primary').contains('Delete').click();
 
-    cy.get('tbody tr').should('not.contain', 'Updated Hero');
+    cy.get('tbody tr').should('not.contain', 'UPDATED HERO');
   });
 });
