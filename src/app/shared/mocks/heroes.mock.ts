@@ -3,7 +3,7 @@ import { Hero } from '../models/hero.model';
 export const HEROES: Hero[] = [
   {
     id: 'b5f64443-4b5a-4d2f-b00c-03ed8e6d4b87',
-    name: 'Superman',
+    name: 'SUPERMAN',
     description:
       'The Man of Steel, born on Krypton as Kal-El and sent to Earth as a baby. Known for his unwavering sense of justice and kindness.',
     superPower: ['Super strength', 'Flight'],
@@ -13,7 +13,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '4a35c6d6-1278-4f95-a5c1-671f1273b0d3',
-    name: 'Wonder Woman',
+    name: 'WONDER WOMAN',
     description:
       'An Amazonian princess and warrior, champion of peace and equality, wielding the Lasso of Truth and Amazon combat skills.',
     superPower: ['Super strength', 'Martial arts'],
@@ -23,7 +23,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: 'e29d80e2-832e-44a3-a169-d9b7ca3bb16e',
-    name: 'Batman',
+    name: 'BATMAN',
     description:
       'The Dark Knight of Gotham, a brilliant detective who uses technology, martial arts and strategy to fight crime.',
     superPower: ['Martial arts', 'Technology'],
@@ -33,7 +33,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '60ed5d7c-bf02-4413-9370-082a1a9ff67f',
-    name: 'Flash',
+    name: 'FLASH',
     description:
       'Barry Allen, the fastest man alive, able to move at speeds beyond imagination and even travel through time.',
     superPower: ['Speed'],
@@ -43,7 +43,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '9b277193-00be-4e2c-9e43-4d9e9e7a1ef7',
-    name: 'Green Lantern',
+    name: 'GREEN LANTERN',
     description:
       'Hal Jordan, a fearless test pilot chosen to wield a power ring that creates anything he imagines, patrolling space as a Green Lantern.',
     superPower: ['Energy blasts', 'Flight', 'Technology'],
@@ -53,7 +53,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: 'ffdb789c-6c2f-4dd0-bb2b-3f4e7f7b3f2a',
-    name: 'Aquaman',
+    name: 'AQUAMAN',
     description:
       'Arthur Curry, King of Atlantis, rules the seas and can communicate telepathically with marine life. Protects both surface and underwater worlds.',
     superPower: ['Super strength', 'Telepathy'],
@@ -63,7 +63,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '1e79b66a-998b-4b9e-813e-8d3e0a23d3b1',
-    name: 'Spider-Man',
+    name: 'SPIDER-MAN',
     description:
       'Peter Parker, a witty young hero with the proportionate strength and agility of a spider, fighting crime in New York City.',
     superPower: ['Agility'],
@@ -73,7 +73,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '9d6b875f-4987-4a89-9a37-b3ccab11a94d',
-    name: 'Iron Man',
+    name: 'IRON MAN',
     description:
       'Tony Stark, genius billionaire inventor who protects the world in a high-tech suit of armor of his own creation.',
     superPower: ['Technology', 'Flight'],
@@ -83,7 +83,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '7efb9926-c294-41bb-8bc7-4b0e176bbfbc',
-    name: 'Black Panther',
+    name: 'BLACK PANTHER',
     description:
       'T’Challa, King of Wakanda, with enhanced strength and agility from the Heart-Shaped Herb, fights for his people and justice worldwide.',
     superPower: ['Agility', 'Martial arts'],
@@ -93,7 +93,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '0bce5e46-4a1e-4fc9-97e7-1e332f209342',
-    name: 'Scarlet Witch',
+    name: 'SCARLET WITCH',
     description: 'Wanda Maximoff, a powerful mutant capable of manipulating reality and minds with her chaos magic.',
     superPower: ['Magic', 'Telepathy'],
     createdAt: new Date(),
@@ -102,7 +102,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '5c1a22d8-96b0-4b3e-9158-36c0725f2e76',
-    name: 'Wolverine',
+    name: 'WOLVERINE',
     description:
       'Logan, the X-Men’s most fierce fighter, possesses regenerative healing powers and unmatched martial prowess.',
     superPower: ['Regeneration', 'Martial arts'],
@@ -112,7 +112,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '7cf524e1-2b54-41cf-bcec-1ca5be4cba37',
-    name: 'Captain Marvel',
+    name: 'CAPTAIN MARVEL',
     description: 'Carol Danvers, former pilot turned cosmic hero, wields incredible strength and shoots energy blasts.',
     superPower: ['Flight', 'Super strength', 'Energy blasts'],
     createdAt: new Date(),
@@ -121,7 +121,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '3f229bc6-6706-40d7-9af8-8e58a4ba3ce0',
-    name: 'Doctor Strange',
+    name: 'DOCTOR STRANGE',
     description:
       'Stephen Strange, once a brilliant surgeon, now the Sorcerer Supreme and protector against mystical threats.',
     superPower: ['Magic'],
@@ -131,7 +131,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: 'dc57434a-bceb-4c31-bf8e-d52b7ecb5de6',
-    name: 'Jean Grey',
+    name: 'JEAN GREY',
     description: 'One of the most powerful mutants, able to read minds and manipulate objects with her thoughts.',
     superPower: ['Telepathy', 'Magic'],
     createdAt: new Date(),
@@ -140,7 +140,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '0cbdfb4a-f92f-44b0-891e-98790c1465c1',
-    name: 'Cyborg',
+    name: 'CYBORG',
     description: 'Victor Stone, half man, half machine, enhanced with cybernetic strength and high-tech weaponry.',
     superPower: ['Technology', 'Super strength'],
     createdAt: new Date(),
@@ -149,7 +149,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '59db7d61-7f91-45e3-807a-e97b1a3b9790',
-    name: 'Vision',
+    name: 'VISION',
     description:
       'An android created with advanced artificial intelligence, able to fire energy blasts and phase through matter.',
     superPower: ['Technology', 'Energy blasts'],
@@ -159,7 +159,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: 'bafd2e72-9fc8-433d-b7f3-32fbcfb1d25c',
-    name: 'Storm',
+    name: 'STORM',
     description: 'Ororo Munroe, goddess of the elements, uses magic to control weather and soar the skies.',
     superPower: ['Magic', 'Flight'],
     createdAt: new Date(),
@@ -168,7 +168,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '4ae5cd23-fd47-4a2f-a803-5d0989d097ab',
-    name: 'Quicksilver',
+    name: 'QUICKSILVER',
     description: 'Pietro Maximoff, mutant with supersonic speed, able to move faster than the eye can follow.',
     superPower: ['Speed'],
     createdAt: new Date(),
@@ -177,7 +177,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '22e2f242-3725-4d41-947a-9f484d2182c3',
-    name: 'Deadpool',
+    name: 'DEADPOOL',
     description: 'Wade Wilson, the “Merc with a Mouth”, is nearly unkillable and an expert in hand-to-hand combat.',
     superPower: ['Regeneration', 'Martial arts'],
     createdAt: new Date(),
@@ -186,7 +186,7 @@ export const HEROES: Hero[] = [
   },
   {
     id: '69f0d3b3-93c7-4d63-9e08-b72bfc0ca20b',
-    name: 'Shazam',
+    name: 'SHAZAM',
     description: 'Billy Batson transforms into Shazam, a magically empowered hero with the strength of gods.',
     superPower: ['Super strength', 'Magic'],
     createdAt: new Date(),

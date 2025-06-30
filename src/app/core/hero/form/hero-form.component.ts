@@ -12,6 +12,7 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 
 import { ButtonComponent } from '../../../shared/components/button/button.component';
+import { UppercaseInputDirective } from '../../../shared/directives/uppercase-input.directive';
 import { Hero } from '../../../shared/models/hero.model';
 import { HeroService } from '../../../shared/services/hero.service';
 
@@ -29,6 +30,7 @@ import { HeroService } from '../../../shared/services/hero.service';
     NzIconModule,
     NzButtonModule,
     RouterLink,
+    UppercaseInputDirective,
   ],
   templateUrl: './hero-form.component.html',
   styleUrl: './hero-form.component.scss',

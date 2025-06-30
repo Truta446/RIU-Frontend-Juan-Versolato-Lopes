@@ -20,7 +20,7 @@ import { SingletonSecureStorageService } from './shared/services/singleton-secur
 
 registerLocaleData(es);
 
-export function httpLoaderFactory(http: HttpClient) {
+export function httpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
