@@ -13,8 +13,8 @@
     "test:watch": "ng test --browsers=Chrome",
     "test:coverage": "ng test --no-watch --code-coverage --browsers=ChromeHeadlessCI && google-chrome ./coverage/frontend/index.html",
     "e2e": "ng e2e",
-    "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "docker:up": "docker compose up",
+    "docker:down": "docker compose down"
   },
   "private": true,
   "dependencies": {

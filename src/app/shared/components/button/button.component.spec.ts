@@ -1,56 +1,92 @@
-import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
+import { Component } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { PlusOutline } from '@ant-design/icons-angular/icons';
+import { provideNzIcons } from 'ng-zorro-antd/icon';
 import { ButtonComponent } from './button.component';
-import { By } from '@angular/platform-browser';
+
+@Component({
+  standalone: true,
+  imports: [ButtonComponent],
+  template: `
+    <app-button [type]="type" [icon]="icon" [block]="block" [loading]="loading" [disabled]="disabled">{{
+      text
+    }}</app-button>
+  `,
+})
+class HostComponent {
+  type = 'primary';
+  icon = '';
+  block = false;
+  loading = false;
+  disabled = false;
+  text = 'Save';
+}
 
 describe('ButtonComponent', () => {
-  let component: ButtonComponent;
-  let fixture: ComponentFixture<ButtonComponent>;
+  let fixture: ComponentFixture<HostComponent>;
+  let host: HostComponent;
 
-  beforeEach(waitForAsync(() => {
-    TestBed.configureTestingModule({
-      imports: [ButtonComponent],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [HostComponent],
+      providers: [provideNzIcons([PlusOutline])],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ButtonComponent);
-    component = fixture.componentInstance;
-  }));
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
+    fixture = TestBed.createComponent(HostComponent);
+    host = fixture.componentInstance;
+    fixture.detectChanges();
   });
 
-  it('should display correct button type', () => {
-    component.type = 'dashed';
-    fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css('button'));
-    expect(button.nativeElement.classList).toContain('ant-btn-dashed');
+  it('should render the button with content from ng-content', () => {
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.textContent).toContain('Save');
   });
 
-  it('should apply block class when block is true', () => {
-    component.block = true;
-    fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css('button'));
-    expect(button.nativeElement.classList).toContain('ant-btn-block');
+  it('should apply the primary type by default', () => {
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.classList).toContain('ant-btn-primary');
   });
 
-  it('should show loading spinner when loading is true', () => {
-    component.loading = true;
+  it('should apply the correct button type when provided', () => {
+    host.type = 'dashed';
     fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css('button'));
-    expect(button.nativeElement.classList).toContain('ant-btn-loading');
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.classList).toContain('ant-btn-dashed');
   });
 
-  it('should disable the button when disabled is true', () => {
-    component.disabled = true;
+  it('should render the icon when provided', () => {
+    host.icon = 'plus';
     fixture.detectChanges();
-    const button = fixture.debugElement.query(By.css('button'));
-    expect(button.nativeElement.disabled).toBeTrue();
+    const icon = fixture.nativeElement.querySelector('nz-icon');
+    expect(icon).toBeTruthy();
+    expect(icon.getAttribute('ng-reflect-nz-type')).toBe('plus');
   });
 
-  it('should not display icon when icon input is not provided', () => {
-    component.icon = undefined;
+  it('should not render the icon if icon input is empty', () => {
+    host.icon = '';
     fixture.detectChanges();
-    const icon = fixture.debugElement.query(By.css('nz-icon'));
-    expect(icon).toBeNull();
+    const icon = fixture.nativeElement.querySelector('nz-icon');
+    expect(icon).toBeFalsy();
+  });
+
+  it('should apply the loading state when set', () => {
+    host.loading = true;
+    fixture.detectChanges();
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.classList).toContain('ant-btn-loading');
+  });
+
+  it('should apply the block style when set', () => {
+    host.block = true;
+    fixture.detectChanges();
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.classList).toContain('ant-btn-block');
+  });
+
+  it('should disable the button when disabled', () => {
+    host.disabled = true;
+    fixture.detectChanges();
+    const btn = fixture.nativeElement.querySelector('button');
+    expect(btn.disabled).toBeTrue();
   });
 });
