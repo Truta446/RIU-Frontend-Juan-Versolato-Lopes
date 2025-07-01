@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { ActivatedRoute, Router } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCardModule } from 'ng-zorro-antd/card';
@@ -78,7 +77,6 @@ describe('HeroFormComponent', () => {
         NzButtonModule,
         NoopAnimationsModule,
         ButtonComponent,
-        RouterTestingModule,
         TranslateModule.forRoot(),
       ],
       providers: [

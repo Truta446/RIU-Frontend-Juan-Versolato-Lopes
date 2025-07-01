@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute } from '@angular/router';
 import { DashboardOutline, DingdingOutline } from '@ant-design/icons-angular/icons';
 import { TranslateModule } from '@ngx-translate/core';
 import { NzIconModule, provideNzIcons } from 'ng-zorro-antd/icon';
@@ -19,6 +19,14 @@ describe('SidenavComponent', () => {
     const stateManagementSpy = jasmine.createSpyObj('StateManagementService', ['isCollapsed']);
     stateManagementSpy.isCollapsed.and.returnValue(false);
 
+    const activatedRouteMock = {
+      snapshot: {
+        paramMap: {
+          get: (key: string) => (key === 'id' ? '1' : null),
+        },
+      },
+    };
+
     TestBed.configureTestingModule({
       imports: [
         SidenavComponent,
@@ -26,11 +34,11 @@ describe('SidenavComponent', () => {
         NzIconModule,
         NzMenuModule,
         NzLayoutModule,
-        RouterTestingModule,
         BrowserAnimationsModule,
       ],
       providers: [
         { provide: StateManagementService, useValue: stateManagementSpy },
+        { provide: ActivatedRoute, useValue: activatedRouteMock },
         provideNzIcons([DingdingOutline, DashboardOutline]),
       ],
     }).compileComponents();

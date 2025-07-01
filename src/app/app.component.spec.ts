@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterOutlet } from '@angular/router';
-import { RouterTestingModule } from '@angular/router/testing';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { TranslateService } from '@ngx-translate/core';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { AppComponent } from './app.component';
@@ -22,6 +21,14 @@ describe('AppComponent', () => {
       language: { set: jasmine.createSpy('set') },
     };
 
+    const activatedRouteMock = {
+      snapshot: {
+        paramMap: {
+          get: (key: string) => (key === 'id' ? '1' : null),
+        },
+      },
+    };
+
     spyOn(localStorage, 'getItem').and.callFake((key: string) => {
       if (key === 'lang') return 'pt';
       return null;
@@ -36,11 +43,11 @@ describe('AppComponent', () => {
         NzLayoutModule,
         CommonModule,
         BrowserAnimationsModule,
-        RouterTestingModule,
       ],
       providers: [
         { provide: TranslateService, useValue: translateService },
         { provide: StateManagementService, useValue: stateManagementService },
+        { provide: ActivatedRoute, useValue: activatedRouteMock },
       ],
     }).compileComponents();
 

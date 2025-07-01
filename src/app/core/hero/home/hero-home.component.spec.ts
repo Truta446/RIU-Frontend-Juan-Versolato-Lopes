@@ -2,7 +2,6 @@ import { ComponentFixture, fakeAsync, TestBed, tick, waitForAsync } from '@angul
 import { ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
 import { MoreOutline, PlusOutline, SearchOutline } from '@ant-design/icons-angular/icons';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
@@ -14,6 +13,7 @@ import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { of } from 'rxjs';
 
+import { ActivatedRoute } from '@angular/router';
 import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { Hero } from '../../../shared/models/hero.model';
 import { HeroService } from '../../../shared/services/hero.service';
@@ -25,6 +25,7 @@ describe('HeroHomeComponent', () => {
   let heroService: jasmine.SpyObj<HeroService>;
   let messageService: jasmine.SpyObj<NzMessageService>;
   let translateService: jasmine.SpyObj<TranslateService>;
+  let router: jasmine.SpyObj<any>;
 
   const HEROES: Hero[] = [
     {
@@ -57,6 +58,8 @@ describe('HeroHomeComponent', () => {
   ];
 
   beforeEach(waitForAsync(() => {
+    router = jasmine.createSpyObj('Router', ['navigate']);
+
     heroService = jasmine.createSpyObj('HeroService', ['getAll', 'delete']);
     heroService.getAll.and.returnValue([...HEROES]);
     messageService = jasmine.createSpyObj('NzMessageService', ['success']);
@@ -65,6 +68,14 @@ describe('HeroHomeComponent', () => {
     translateService.instant.and.returnValue('Herói deletado com sucesso.');
     translateService.get.and.callFake((key: string) => of(key));
     translateService.stream.and.callFake((key: string) => of(key));
+
+    const activatedRouteMock = {
+      snapshot: {
+        paramMap: {
+          get: (key: string) => (key === 'id' ? '1' : null),
+        },
+      },
+    };
 
     TestBed.configureTestingModule({
       imports: [
@@ -79,11 +90,12 @@ describe('HeroHomeComponent', () => {
         TranslateModule.forRoot(),
         BrowserAnimationsModule,
         ButtonComponent,
-        RouterTestingModule,
       ],
       providers: [
         { provide: HeroService, useValue: heroService },
         { provide: NzMessageService, useValue: messageService },
+        { provide: 'Router', useValue: router },
+        { provide: ActivatedRoute, useValue: activatedRouteMock },
         provideNzIcons([MoreOutline, SearchOutline, PlusOutline]),
       ],
     }).compileComponents();

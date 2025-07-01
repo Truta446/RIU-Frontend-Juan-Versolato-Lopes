@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import { RouterTestingModule } from '@angular/router/testing';
 import { of } from 'rxjs';
 
 import { ActivatedRoute } from '@angular/router';
@@ -52,7 +51,7 @@ describe('HeroDetailComponent', () => {
     translateService.stream.and.callFake((key: string) => of(key));
 
     TestBed.configureTestingModule({
-      imports: [HeroDetailComponent, RouterTestingModule, TranslateModule.forRoot(), NoopAnimationsModule],
+      imports: [HeroDetailComponent, TranslateModule.forRoot(), NoopAnimationsModule],
       providers: [
         { provide: HeroService, useValue: heroService },
         { provide: NzMessageService, useValue: messageService },
